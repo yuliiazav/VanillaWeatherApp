@@ -5,16 +5,19 @@ body {
     font-family: 'PT Serif', serif;
 }
 
-.weather-app {
+.weather-app-wrapper {
     max-width: 600px;
     margin: 30px auto;
-    padding: 20px;
+}
+
+.weather-app {
+    padding: 20px 50px;
     border: 1px solid #dadde1;
     border-radius: 10px;
 }
 
 #city {
-    margin: 20px 0 10px;
+    margin: 10px 0;
     line-height: 29px;
     font-weight: 700;
     font-size: 38px;
@@ -45,4 +48,46 @@ body {
 .weather-list li .weather-list__data {
     color: #f65282;
     font-weight: 400;
+}
+
+.weather-list_secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.weather-list_main {
+    margin-bottom: 40px;
+}
+
+.units {
+    color: #202124;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 6px;
+    padding-left: 6px;
+    vertical-align: top;
+}
+
+#temperature {
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.weather-temperature #icon {
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.weather-temperature {
+    align-items: center;
+}
+
+.weather-list_secondarycontainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 60px;
 }
