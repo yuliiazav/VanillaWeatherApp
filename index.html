@@ -13,7 +13,34 @@
 
 <body>
     <div class="container">
-        <button class="btn btn-primary">Click</button>
+        <div class="weather-app-wrapper">
+            <div class="weather-app">
+                <div class="overview">
+                    <h1 id="city">New York</h1>
+                    <ul>
+                        <li>Last updated: <span id="date"></span></li>
+                        <li id="description">Sunny</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="clearfix weather-temperature">
+                            <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="Clear" width="48" height="48" id="icon" class="float-left" />
+                            <div class="float-left">
+                                <strong id="temperature"></strong><span class="units"> 12°C | °F</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Humidity: <span id="humidity"></span>10 %</li>
+                            <li>Wind: <span id="wind"></span> 5 m/h</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <script src="js/app.js"></script>
