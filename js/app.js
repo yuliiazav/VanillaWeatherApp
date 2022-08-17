@@ -17,6 +17,7 @@ currentDay.innerHTML = `${day},`;
 //////Search engine
 
 function showWeather(response) {
+    console.log(response.data);
     let cityTemperature = document.querySelector("#temperature");
     let temperature = Math.round(response.data.main.temp);
     cityTemperature.innerHTML = `${temperature}°`;
@@ -24,6 +25,16 @@ function showWeather(response) {
     cityName.innerHTML = ` ${response.data.name}`;
     let weatherCondition = document.querySelector("#description");
     weatherCondition.innerHTML = `${response.data.weather[0].main}`;
+    let humidityElement = document.querySelector("#humidity");
+    humidityElement.innerHTML = `${response.data.main.humidity} %`;
+    let windElement = document.querySelector("#wind");
+    windElement.innerHTML = `${Math.round(response.data.wind.speed)} m/h`;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function showLocation(position) {
