@@ -34,7 +34,7 @@
                     </div>
                 </form>
                 <div class="overview">
-                    <h1 id="city">New York</h1>
+                    <h1 id="city">Your city is ...?</h1>
                     <ul class="weather-list weather-list_main">
                         <li>Last updated: <span id="date" class="weather-list__data current-day">Monday,</span> <span id="time" class="weather-list__data current-time">12:00</span> </li>
                         <li id="description">Sunny</li>
@@ -45,15 +45,19 @@
                         <div class="d-flex weather-temperature">
                             <img src="https://ssl.gstatic.com/onebox/weather/48/sunny.png" alt="Sunny" id="icon" />
                             <div>
-                                <strong id="temperature">12</strong><span class="units"> °C | °F </span>
+                                <strong id="temperature">-</strong><span class="units celsius-unit"><a href="#"
+                                        class="unit-link celsius-link active">°C</a> |
+                                </span>
+                                <span class="units fahrenheit-unit"><a href="#" class="unit-link fahrenheit-link">°F</a>
+                                </span>
                             </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="weather-list_secondarycontainer">
                             <ul class="weather-list weather-list_secondary">
-                                <li>Humidity: <span id="humidity" class="weather-list__data">10 %</span></li>
-                                <li>Wind: <span id="wind" class="weather-list__data">5 m/h</span></li>
+                                <li>Humidity: <span id="humidity" class="weather-list__data">__ %</span></li>
+                                <li>Wind: <span id="wind" class="weather-list__data">__ m/h</span></li>
                             </ul>
                         </div>
                     </div>

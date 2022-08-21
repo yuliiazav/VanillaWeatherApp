@@ -20,6 +20,7 @@ function showWeather(response) {
     console.log(response.data);
     let cityTemperature = document.querySelector("#temperature");
     let temperature = Math.round(response.data.main.temp);
+    temperatureCelsius = response.data.main.temp;
     cityTemperature.innerHTML = `${temperature}°`;
     let cityName = document.querySelector("#city");
     cityName.innerHTML = ` ${response.data.name}`;
@@ -67,3 +68,29 @@ currentBtn.addEventListener("click", getCurrentLocation);
 let submitBtn = document.querySelector(".submit-btn");
 submitBtn.addEventListener("click", handleSubmit);
 ///
+function convertTempToFahrenheit(event) {
+    event.preventDefault();
+    let calcFahrenheit = (temperatureCelsius * 9) / 5 + 32;
+    toCelsiusLink.classList.remove("active");
+    toFahrenheitLink.classList.add("active");
+    let temperatureElement = document.querySelector('#temperature');
+    temperatureElement.innerHTML = Math.round(calcFahrenheit);
+}
+
+function convertTempToCelsius(event) {
+    event.preventDefault();
+    toCelsiusLink.classList.add("active");
+    toFahrenheitLink.classList.remove("active");
+    let temperatureElement = document.querySelector('#temperature');
+    temperatureElement.innerHTML = Math.round(temperatureCelsius);
+}
+
+
+let toFahrenheitLink = document.querySelector(".fahrenheit-link");
+toFahrenheitLink.addEventListener("click", convertTempToFahrenheit);
+
+
+let toCelsiusLink = document.querySelector(".celsius-link");
+toCelsiusLink.addEventListener("click", convertTempToCelsius);
+
+let temperatureCelsius = null;
